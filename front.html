@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact List</title>
+</head>
+
+<body  onLoad="contactList()">
+
+
+    <div>
+        Name: <input type="text"  id="name">
+        Email: <input type="text"  id="mail">
+         
+       Mobile No.:<input type="text"  id="number">
+         <button type="button" onClick="add()">Add</button>
+<br>
+<br>
+<br>
+<br>
+
+<table  width = "100%">
+    <thead>
+       <tr>
+          <td><b>NAME</b></td>
+          <td><b>E-MAIL</b></td>
+          <td><b>NUMBER</b></td>
+          <td><b>EDIT/UPDATE</B></td>
+          <td><b>DELETE</b></td>
+       </tr>
+    </thead>
+    
+   
+    
+    <tbody id="contactBody">
+       <!-- <tr>
+           <td>Harshit</td>
+          <td>hrt1993@gamil.com</td>
+          <td>9696905321</td>
+          <td><button>Update</button></td>
+       </tr>-->
+    </tbody> 
+    
+ </table>
+
+
+        </div>
+
+
+
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.js"></script>
+<script src="front.js"></script>
+
+</body>  
+</html>

@@ -3,13 +3,20 @@
 //var axios = require('axios');
 
 function add(){
+    console.log("add started");
     var email=document.getElementById("email").value;
     var name=document.getElementById("name").value;
     var number=document.getElementById("number").value;
-    console.log('contact data',name,email,number);
+    var retrievedObject = localStorage.getItem('userObject');
+    console.log("retrieve",retrievedObject);
+    var user=JSON.parse(retrievedObject);
+    var another=user.useremail;
+    console.log("another",another);
+    // var admin=another;
+    //console.log('contact data',name,email,number);
     
     
-    axios.post('/contact',{name:name,email:email,number:number})
+    axios.post('/contact',{name:name,email:email,number:number,admin:another})
     .then((response)=>{
         if(response.data.status)
         {
@@ -27,8 +34,16 @@ function add(){
 
 
 function contactList(){
+
     var l='',name="",email="",num="",html="",id="";
-    axios.get('/contact')
+    
+    var retrievedObject = localStorage.getItem('userObject');
+    console.log("retrieve",retrievedObject);
+    var user=JSON.parse(retrievedObject);
+    var another=user.useremail;
+    console.log("other",another);
+    
+    axios.post('/contactFetch',{another:another})
     .then((response)=>{
         console.log('mycontactlist',response);
         l=response.data.contact.length;
@@ -50,9 +65,10 @@ function contactList(){
         }
 
 document.getElementById("contactBody").innerHTML=html;
-    },(e)=>{
-        console.log('err',e);
-    })    
+  
+    }).catch((e)=>{
+        console.log("err",e);
+    }    )
 }
 var oldemail="";
 function editRow(id)
@@ -81,7 +97,7 @@ function updateRow(id){
     console.log(name,email,num,oldemail);
     axios.post('/update',{name:name,email:email,number:num,oldemail:oldemail})
     .then((response)=>{
-        console.log(response);
+        //console.log(response);
         if(response.data.status)
         {
             alert(response.data.message);
@@ -118,3 +134,5 @@ function updateRow(id){
         console.log('err',e);
     })
 }
+
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <script>
+                function check(){
+                     var userob= localStorage.getItem('userObject');
+                  if(userob==null || userob==''){
+                    window.location="/";
+                    return false;
+                  }
+                }
+             </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body onload="check()">
+    <h1><b>User Profile</b></h1>
+Name:<span id="uname"></span>
+<br>
+<br>
+
+Email:<span id="uemail"></span>
+<br>
+<br>
+<a href="/contac">Home</a>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>

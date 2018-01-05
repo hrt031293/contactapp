@@ -21,14 +21,14 @@ border-color:black;
 <div id="box">
 
     <h1>Login Page</h1>
-    E-Mail:<input type="text" placeholder="email">
+    E-Mail:<input type="text" id="email" placeholder="email">
     <br>
     <br>
-    Password:<input type="text" placeholder="password">
+    Password:<input type="text" id="pass" placeholder="password">
     <br>
     <br>
-    <button type="button">Login</button>
-<a href="/signUp">New User?</a>
+    <button type="button" id="logdet" onClick="signin()">Login</button>
+<a href="/signUp" >New User?</a>
 </div>
 
 
@@ -36,6 +36,6 @@ border-color:black;
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.js"></script>
-<script src="front.js"></script>
+<script src="signin.js"></script>
 </body>
 </html>
